@@ -45,7 +45,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/api/yfinance.FundQuery';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="yfinance.screen" href="yfinance.screen.html" />
+    <link rel="next" title="ETFQuery" href="yfinance.ETFQuery.html" />
     <link rel="prev" title="EquityQuery" href="yfinance.EquityQuery.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -361,6 +361,10 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="yfinance.Market.html">Market</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.calendars.html">Calendars</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Calendars.html">Calendars</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.financials.html">Financials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_income_stmt.html">yfinance.Ticker.get_income_stmt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.income_stmt.html">yfinance.Ticker.income_stmt</a></li>
@@ -438,6 +442,7 @@ document.write(`
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../yfinance.screener.html">Screener &amp; Query</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="yfinance.EquityQuery.html">EquityQuery</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">FundQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.ETFQuery.html">ETFQuery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="yfinance.screen.html">yfinance.screen</a></li>
 </ul>
 </details></li>
@@ -516,7 +521,7 @@ document.write(`
 <h1>FundQuery<a class="headerlink" href="#fundquery" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="yfinance.FundQuery">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">yfinance.</span></span><span class="sig-name descname"><span class="pre">FundQuery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operand</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">QueryBase</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Real</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#yfinance.FundQuery" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">yfinance.</span></span><span class="sig-name descname"><span class="pre">FundQuery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'eq'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'is-in'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'btwn'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'gt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'lt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'gte'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'lte'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'and'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'or'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operand</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">QueryBase</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Real</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#yfinance.FundQuery" title="Link to this definition">#</a></dt>
 <dd><p>The <cite>FundQuery</cite> class constructs filters for mutual funds based on specific criteria such as region, sector, exchange, and peer group.</p>
 <p>Start with value operations: <cite>EQ</cite> (equals), <cite>IS-IN</cite> (is in), <cite>BTWN</cite> (between), <cite>GT</cite> (greater than), <cite>LT</cite> (less than), <cite>GTE</cite> (greater or equal), <cite>LTE</cite> (less or equal).</p>
 <p>Combine them with logical operations: <cite>AND</cite>, <cite>OR</cite>.</p>
@@ -592,7 +597,65 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p>exchange</p></td>
 <td><ul class="simple">
-<li><p>us: NAS</p></li>
+<li><p>ae: DFM</p></li>
+<li><p>ar: BUE</p></li>
+<li><p>at: VIE</p></li>
+<li><p>au: ASX, CXA</p></li>
+<li><p>be: BRU</p></li>
+<li><p>br: SAO</p></li>
+<li><p>ca: CNQ, NEO, TOR, VAN</p></li>
+<li><p>ch: EBS</p></li>
+<li><p>cl: SGO</p></li>
+<li><p>cn: SHH, SHZ</p></li>
+<li><p>co: BVC</p></li>
+<li><p>cz: PRA</p></li>
+<li><p>de: BER, DUS, EUX, FRA, GER, HAM, HAN, MUN, STU</p></li>
+<li><p>dk: CPH</p></li>
+<li><p>ee: TAL</p></li>
+<li><p>eg: CAI</p></li>
+<li><p>es: BAR, MAD, MCE</p></li>
+<li><p>fi: HEL</p></li>
+<li><p>fr: ENX, PAR</p></li>
+<li><p>gb: CXE, IOB, LSE</p></li>
+<li><p>gr: ATH</p></li>
+<li><p>hk: HKG</p></li>
+<li><p>hu: BUD</p></li>
+<li><p>id: JKT</p></li>
+<li><p>ie: ISE</p></li>
+<li><p>il: TLV</p></li>
+<li><p>in: BSE, NSI</p></li>
+<li><p>is: ICE</p></li>
+<li><p>it: MIL</p></li>
+<li><p>jp: FKA, JPX, OSA, SAP</p></li>
+<li><p>kr: KOE, KSC</p></li>
+<li><p>kw: KUW</p></li>
+<li><p>lk: CSE</p></li>
+<li><p>lt: LIT</p></li>
+<li><p>lv: RIS</p></li>
+<li><p>mx: MEX</p></li>
+<li><p>my: KLS</p></li>
+<li><p>nl: AMS</p></li>
+<li><p>no: OSL</p></li>
+<li><p>nz: NZE</p></li>
+<li><p>pe:</p></li>
+<li><p>ph: PHP, PHS</p></li>
+<li><p>pk: KAR</p></li>
+<li><p>pl: WSE</p></li>
+<li><p>pt: LIS</p></li>
+<li><p>qa: DOH</p></li>
+<li><p>ro: BVB</p></li>
+<li><p>ru: MCX</p></li>
+<li><p>sa: SAU</p></li>
+<li><p>se: STO</p></li>
+<li><p>sg: SES</p></li>
+<li><p>sr:</p></li>
+<li><p>th: SET</p></li>
+<li><p>tr: IST</p></li>
+<li><p>tw: TAI, TWO</p></li>
+<li><p>us: ASE, NAS, NCM, NGM, NMS, NYQ, OEM, OGM, OQB, PNK, WCB</p></li>
+<li><p>ve: CCS</p></li>
+<li><p>vn: VSE</p></li>
+<li><p>za: JNB</p></li>
 </ul>
 </td>
 </tr>
@@ -604,7 +667,7 @@ document.write(`
 <p class="rubric">Methods</p>
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operand</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">QueryBase</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Real</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'eq'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'is-in'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'btwn'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'gt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'lt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'gte'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'lte'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'and'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'or'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operand</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">QueryBase</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Real</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -636,11 +699,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="yfinance.screen.html"
+       href="yfinance.ETFQuery.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">yfinance.screen</p>
+        <p class="prev-next-title">ETFQuery</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
